@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Root, Container, Wrapper } from "./style";
-import logo from "../../assets/logo.jpg";
+import logo from "../../assets/logo.png";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
@@ -29,7 +29,7 @@ const Header = () => {
                 <span className="logo-title">softdez</span>
               </NavLink>
             </div>
-            <nav>
+            <nav data-aos={"fade-left"}>
               <ul className="nav__list">
                 <li onClick={() => setOpen(false)} className="nav__list__item">
                   <a href="#about">О нас</a>

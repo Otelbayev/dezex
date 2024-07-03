@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import call from "../assets/call2.gif";
+import call from "../assets/call.gif";
 
 const scaleAnimation = keyframes`
   0%, 100% {
@@ -30,14 +30,13 @@ const Universal = () => {
     <Root>
       <Header />
       <Outlet />
-      <Footer />
+      {/* <Footer /> */}
       <div className="slide-in">
         <a href="tel:+998935960246">
           <img
             style={{
-              width: "100px",
-              height: "100px",
-              transform: "rotate(-75deg)",
+              width: "70px",
+              height: "70px",
             }}
             src={call}
             alt=""
