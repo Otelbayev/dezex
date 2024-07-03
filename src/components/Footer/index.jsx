@@ -1,9 +1,9 @@
 import React from "react";
 import { Container } from "./style";
 
-const Footer = () => {
+const Footer = ({ contactRef }) => {
   return (
-    <Container>
+    <Container ref={contactRef}>
       <div className="root-container">
         <div className="content">
           <div className="contact">

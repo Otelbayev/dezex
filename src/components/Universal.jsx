@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
@@ -27,11 +27,13 @@ const Root = styled.div`
 `;
 
 const Universal = () => {
+  const contactRef = useRef();
+
   return (
     <Root>
-      <Header />
+      <Header contactRef={contactRef} />
       <Outlet />
-      <Footer />
+      <Footer contactRef={contactRef} />
       <div className="slide-in">
         <a href="tel:+998935960246">
           <img

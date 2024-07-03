@@ -87,6 +87,7 @@ export const Wrapper = styled.div`
           color: var(--dark);
           font-size: 18px;
           font-weight: 500;
+          cursor: pointer;
           text-decoration: none;
         }
       }

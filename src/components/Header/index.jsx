@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Root, Container, Wrapper } from "./style";
 import logo from "../../assets/logo.png";
 import { NavLink } from "react-router-dom";
+import { useScroll } from "../../hooks/useScroll";
 
-const Header = () => {
+const Header = ({ contactRef }) => {
   const [open, setOpen] = useState(false);
 
   return (
@@ -32,16 +33,16 @@ const Header = () => {
             <nav data-aos={"fade-left"}>
               <ul className="nav__list">
                 <li onClick={() => setOpen(false)} className="nav__list__item">
-                  <a href="#about">О нас</a>
+                  <a>О нас</a>
                 </li>
                 <li onClick={() => setOpen(false)} className="nav__list__item">
-                  <a href="#services">Услуги</a>
+                  <a>Услуги</a>
                 </li>
                 <li onClick={() => setOpen(false)} className="nav__list__item">
-                  <a href="#reviews">Отзывы</a>
+                  <a>Отзывы</a>
                 </li>
                 <li onClick={() => setOpen(false)} className="nav__list__item">
-                  <a href="#contacts">Контакты</a>
+                  <a onClick={() => useScroll(contactRef)}>Контакты</a>
                 </li>
               </ul>
             </nav>
