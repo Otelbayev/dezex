@@ -91,4 +91,17 @@ export const Container = styled.div`
       }
     }
   }
+  @media screen and (max-width: 450px) {
+    .showcase {
+      &__title {
+        font-size: 30px;
+      }
+      form {
+        width: 100%;
+        label {
+          font-size: 18px;
+        }
+      }
+    }
+  }
 `;

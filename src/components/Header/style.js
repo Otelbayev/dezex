@@ -118,7 +118,7 @@ export const Wrapper = styled.div`
         padding: 20px;
         gap: 20px;
         transform: ${({ open }) =>
-          open === false ? "translateY(-100%)" : "translateY(0)"};
+          open === false ? "translateY(-700px)" : "translateY(0)"};
         transition: all 0.5s ease;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
       }

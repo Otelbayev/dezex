@@ -19,7 +19,7 @@ const Root = styled.div`
   .slide-in {
     position: fixed;
     z-index: 99;
-    top: 88vh;
+    top: 80vh;
     right: 40px;
     animation: ${scaleAnimation} 0.5 ease-in-out infinite;
   }
