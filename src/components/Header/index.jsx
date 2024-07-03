@@ -14,8 +14,8 @@ const Header = () => {
             <div className="top__title">Звоните прямо сейчас!</div>
             <div className="top__phone">
               <i className="fa-solid fa-phone"></i>
-              <a href="tel:+998935960246">(99) 860 09 69</a> |
-              <a href="tel:+998935960246">(99) 860 09 69</a>
+              <a href="tel:+998935960246">90 037 55 77</a> |
+              <a href="tel:+998935960246">94 037 55 77</a>
             </div>
           </div>
         </div>

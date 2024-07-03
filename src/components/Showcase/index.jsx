@@ -2,12 +2,6 @@ import React, { useState } from "react";
 import { Container } from "./style";
 
 const Showcase = () => {
-  const [value, setValue] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setValue("");
-  };
   return (
     <Container>
       <div className="root-container">
@@ -15,7 +9,11 @@ const Showcase = () => {
           <h1 className="showcase__title" data-aos="zoom-in">
             Профессиональная дезинфекция в Ташкенте!
           </h1>
-          <form onSubmit={handleSubmit}>
+          <div className="showcase__mintitle" data-aos="zoom-in">
+            Официальная служба дезинфекции дезинсекции в г.ташкент! Мы
+            гарантируем все наши услуги!
+          </div>
+          {/* <form>
             <label htmlFor="lab">ОСТАВЬТЕ СВОЙ НОМЕР ТЕЛЕФОНА</label>
             <input
               value={value}
@@ -25,7 +23,7 @@ const Showcase = () => {
               required
             />
             <button>Отправить</button>
-          </form>
+          </form> */}
         </div>
       </div>
     </Container>

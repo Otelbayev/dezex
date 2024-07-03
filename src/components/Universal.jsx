@@ -15,6 +15,7 @@ const scaleAnimation = keyframes`
 `;
 
 const Root = styled.div`
+  overflow: hidden;
   position: relative;
   .slide-in {
     position: fixed;
@@ -30,7 +31,7 @@ const Universal = () => {
     <Root>
       <Header />
       <Outlet />
-      {/* <Footer /> */}
+      <Footer />
       <div className="slide-in">
         <a href="tel:+998935960246">
           <img
