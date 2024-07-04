@@ -3,9 +3,11 @@ import { Root, Container, Wrapper } from "./style";
 import logo from "../../assets/logo.png";
 import { NavLink } from "react-router-dom";
 import { useScroll } from "../../hooks/useScroll";
+import { useScrollContext } from "../../context/ScrollContext";
 
-const Header = ({ contactRef }) => {
+const Header = () => {
   const [open, setOpen] = useState(false);
+  const { contactRef, serviceRef, commentRef, aboutRef } = useScrollContext();
 
   return (
     <Root>
@@ -32,17 +34,41 @@ const Header = ({ contactRef }) => {
             </div>
             <nav data-aos={"fade-left"}>
               <ul className="nav__list">
-                <li onClick={() => setOpen(false)} className="nav__list__item">
+                <li
+                  onClick={() => {
+                    setOpen(false);
+                    useScroll(aboutRef);
+                  }}
+                  className="nav__list__item"
+                >
                   <a>О нас</a>
                 </li>
-                <li onClick={() => setOpen(false)} className="nav__list__item">
+                <li
+                  onClick={() => {
+                    setOpen(false);
+                    useScroll(serviceRef);
+                  }}
+                  className="nav__list__item"
+                >
                   <a>Услуги</a>
                 </li>
-                <li onClick={() => setOpen(false)} className="nav__list__item">
+                <li
+                  onClick={() => {
+                    setOpen(false);
+                    useScroll(commentRef);
+                  }}
+                  className="nav__list__item"
+                >
                   <a>Отзывы</a>
                 </li>
-                <li onClick={() => setOpen(false)} className="nav__list__item">
-                  <a onClick={() => useScroll(contactRef)}>Контакты</a>
+                <li
+                  onClick={() => {
+                    setOpen(false);
+                    useScroll(contactRef);
+                  }}
+                  className="nav__list__item"
+                >
+                  <a>Контакты</a>
                 </li>
               </ul>
             </nav>

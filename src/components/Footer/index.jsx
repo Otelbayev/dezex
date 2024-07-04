@@ -1,7 +1,9 @@
 import React from "react";
 import { Container } from "./style";
+import { useScrollContext } from "../../context/ScrollContext";
 
-const Footer = ({ contactRef }) => {
+const Footer = () => {
+  const { contactRef } = useScrollContext();
   return (
     <Container ref={contactRef}>
       <div className="root-container">
@@ -26,7 +28,7 @@ const Footer = ({ contactRef }) => {
               </div>
             </div>
             <div className="contact__item" data-aos={"zoom-in"}>
-              <i class="fa-solid fa-clock"></i>
+              <i className="fa-solid fa-clock"></i>
               <div>
                 <div className="contact__item__label">Время работы</div>
                 <div className="contact__item__tel">Пн-Вс: 8:00-22:00</div>

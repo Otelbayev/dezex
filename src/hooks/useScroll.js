@@ -3,7 +3,7 @@ export const useScroll = (ref) => {
     ref?.current?.getBoundingClientRect().top + window.pageYOffset;
 
   window.scrollTo({
-    top: elementPosition,
+    top: elementPosition - 100,
     behavior: "smooth",
   });
 };

@@ -27,13 +27,11 @@ const Root = styled.div`
 `;
 
 const Universal = () => {
-  const contactRef = useRef();
-
   return (
     <Root>
-      <Header contactRef={contactRef} />
+      <Header />
       <Outlet />
-      <Footer contactRef={contactRef} />
+      <Footer />
       <div className="slide-in">
         <a href="tel:+998935960246">
           <img
