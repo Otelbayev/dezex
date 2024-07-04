@@ -43,3 +43,11 @@ body {
   font-weight: 400;
   color: var(--dark);
 }
+
+.slick-next {
+  margin-right: 15px !important;
+}
+
+.slick-prev {
+  margin-left: 15px !important;
+}
