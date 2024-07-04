@@ -3,6 +3,7 @@ import bg from "../../assets/bg3.jpg";
 import bg1 from "../../assets/bg.jpg";
 
 export const Container = styled.div`
+  margin-top: 100px;
   position: relative;
   width: 100%;
   height: calc(100dvh - 100px);
@@ -15,7 +16,7 @@ export const Container = styled.div`
   overflow: hidden;
   display: flex;
   align-items: center;
-  
+
   .showcase {
     display: flex;
     flex-direction: column;
@@ -45,6 +46,7 @@ export const Container = styled.div`
   }
   @media screen and (max-width: 700px) {
     height: calc(100dvh - 80px);
+    margin-top: 80px;
     background-image: url("${bg}");
     .showcase {
       gap: 30px;
