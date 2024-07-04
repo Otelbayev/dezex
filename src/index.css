@@ -16,7 +16,7 @@ body {
 }
 
 :root {
-  --dark: #0A6847;
+  --dark: #0a6847;
 }
 
 @media (max-width: 1600px) {
@@ -35,4 +35,11 @@ body {
   .root-container {
     width: 95%;
   }
+}
+
+.title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 400;
+  color: var(--dark);
 }

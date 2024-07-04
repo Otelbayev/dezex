@@ -2,12 +2,6 @@ import styled from "styled-components";
 
 export const Content = styled.div`
   padding: 20px 0;
-  .title {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 400;
-    color: var(--dark);
-  }
 
   .card {
     display: flex;
@@ -37,6 +31,26 @@ export const Content = styled.div`
     }
   }
 
+  .video {
+    display: flex;
+    gap: 40px;
+    margin: 50px 0;
+    &__item {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+      iframe {
+        width: 100%;
+        height: 260px;
+        border: 1px solid var(--dark);
+        border-radius: 3px;
+      }
+    }
+  }
+
   @media (max-width: 1000px) {
     .card {
       flex-direction: column;
@@ -46,6 +60,10 @@ export const Content = styled.div`
           width: 100px;
         }
       }
+    }
+    .video {
+      flex-direction: column;
+      margin: 20px 0;
     }
   }
 `;
