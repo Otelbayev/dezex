@@ -51,3 +51,7 @@ body {
 .slick-prev {
   margin-left: 15px !important;
 }
+
+html {
+  scroll-behavior: smooth;
+}
