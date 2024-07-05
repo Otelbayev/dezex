@@ -29,7 +29,7 @@ const Comments = () => {
         </div>
         <Slider {...settings} className="slider">
           <div>
-            <div className="slider__item">
+            <div className="slider__item" data-aos="zoom-in">
               <img className="slider__item__img" src={ivan} />
               <div className="slider__item__name">Иван </div>
               <div className="slider__item__desc">
@@ -40,7 +40,7 @@ const Comments = () => {
             </div>
           </div>
           <div>
-            <div className="slider__item">
+            <div className="slider__item" data-aos="zoom-in">
               <img className="slider__item__img" src={dm} />
               <div className="slider__item__name">Дмитрий</div>
               <div className="slider__item__desc">
@@ -53,7 +53,7 @@ const Comments = () => {
             </div>
           </div>
           <div>
-            <div className="slider__item">
+            <div className="slider__item" data-aos="zoom-in">
               <img className="slider__item__img" src={elena} />
               <div className="slider__item__name">Елена</div>
               <div className="slider__item__desc">

@@ -31,7 +31,7 @@ const Footer = () => {
               <i className="fa-solid fa-clock"></i>
               <div>
                 <div className="contact__item__label">Время работы</div>
-                <div className="contact__item__tel">Пн-Вс: 8:00-22:00</div>
+                <div className="contact__item__tel">Пн-Вс: 7 / 24</div>
               </div>
             </div>
           </div>
@@ -70,9 +70,7 @@ const Footer = () => {
               <li>Дезинфекция ресторанов и кафе в Ташкенте</li>
             </ul>
           </div>
-          <div className="copy">
-            © Copyright 2024 by <a href="https://jaasurweb.uz/">jssaurweb.uz</a>
-          </div>
+          <div className="copy">© Copyright 2018</div>
         </div>
       </div>
     </Container>

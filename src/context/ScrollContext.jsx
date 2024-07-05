@@ -1,4 +1,4 @@
-import { createContext, useContext, useRef } from "react";
+import { createContext, useContext, useRef, useState } from "react";
 
 const ScrollContext = createContext();
 
@@ -9,9 +9,17 @@ const ScrollContextProvider = ({ children }) => {
   const aboutRef = useRef();
   const serviceRef = useRef();
   const commentRef = useRef();
+  const [scroll, setScroll] = useState("");
   return (
     <ScrollContext.Provider
-      value={{ contactRef, aboutRef, serviceRef, commentRef }}
+      value={{
+        contactRef,
+        aboutRef,
+        serviceRef,
+        commentRef,
+        scroll,
+        setScroll,
+      }}
     >
       {children}
     </ScrollContext.Provider>

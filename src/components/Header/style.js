@@ -83,11 +83,15 @@ export const Wrapper = styled.div`
       align-items: center;
       gap: 15px;
       &__item {
+        width: 100%;
         a {
+          padding: 5px 0;
+          cursor: pointer;
+          display: block;
+          width: 100%;
           color: var(--dark);
           font-size: 18px;
           font-weight: 500;
-          cursor: pointer;
           text-decoration: none;
         }
       }
@@ -114,7 +118,7 @@ export const Wrapper = styled.div`
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        height: 190px;
+        height: 230px;
         background-color: #fff;
         padding: 20px;
         gap: 20px;
@@ -122,6 +126,11 @@ export const Wrapper = styled.div`
           open === false ? "translateY(-700px)" : "translateY(0)"};
         transition: all 0.5s ease;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        gap: 5px;
+        &__item {
+          border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+          padding: 5px 0;
+        }
       }
     }
   }

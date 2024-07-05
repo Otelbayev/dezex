@@ -41,12 +41,17 @@ export const Content = styled.div`
       flex-direction: column;
       align-items: center;
       gap: 20px;
+      border: 1px solid var(--dark);
       text-align: center;
       iframe {
         width: 100%;
         height: 260px;
-        border: 1px solid var(--dark);
         border-radius: 3px;
+      }
+      &__title{
+        font-size: 18px;
+        padding-bottom: 10px;
+        font-weight: 600;
       }
     }
   }

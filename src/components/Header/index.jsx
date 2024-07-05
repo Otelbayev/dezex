@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import { Root, Container, Wrapper } from "./style";
 import logo from "../../assets/logo.png";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useScroll } from "../../hooks/useScroll";
 import { useScrollContext } from "../../context/ScrollContext";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const { contactRef, serviceRef, commentRef, aboutRef } = useScrollContext();
+  const { contactRef, serviceRef, commentRef, aboutRef, setScroll } =
+    useScrollContext();
+  const navigate = useNavigate();
+
+  const handleClick = (title, ref) => {
+    setOpen(false);
+    if (window.location.pathname !== "/") {
+      setScroll(title);
+      navigate("/");
+    } else {
+      useScroll(ref);
+    }
+  };
 
   return (
     <Root>
@@ -35,28 +47,19 @@ const Header = () => {
             <nav data-aos={"fade-left"}>
               <ul className="nav__list">
                 <li
-                  onClick={() => {
-                    setOpen(false);
-                    useScroll(aboutRef);
-                  }}
+                  onClick={() => handleClick("about", aboutRef)}
                   className="nav__list__item"
                 >
-                  <a>О нас</a>
+                  <NavLink to="/">О нас</NavLink>
                 </li>
                 <li
-                  onClick={() => {
-                    setOpen(false);
-                    useScroll(serviceRef);
-                  }}
+                  onClick={() => handleClick("service", serviceRef)}
                   className="nav__list__item"
                 >
                   <a>Услуги</a>
                 </li>
                 <li
-                  onClick={() => {
-                    setOpen(false);
-                    useScroll(commentRef);
-                  }}
+                  onClick={() => handleClick("comment", commentRef)}
                   className="nav__list__item"
                 >
                   <a>Отзывы</a>

@@ -15,7 +15,12 @@ const Service = () => {
         </div>
         <div className="content">
           {data.map((e) => (
-            <div className="cart" onClick={() => navigate(`services/${e.id}`)}>
+            <div
+              className="cart"
+              data-aos="fade-up"
+              onClick={() => navigate(`services/${e.id}`)}
+              key={e.id}
+            >
               <img src={e.img} alt="" />
               <div className="cart__bottom">
                 <div className="cart__title">{e.title}</div>
