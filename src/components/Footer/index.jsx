@@ -70,7 +70,6 @@ const Footer = () => {
               <li>Дезинфекция ресторанов и кафе в Ташкенте</li>
             </ul>
           </div>
-          <div className="copy">© Copyright 2018</div>
         </div>
       </div>
     </Container>

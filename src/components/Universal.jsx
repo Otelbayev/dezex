@@ -33,7 +33,7 @@ const Universal = () => {
       <Outlet />
       <Footer />
       <div className="slide-in">
-        <a href="tel:+998935960246">
+        <a href="tel:+998900375577">
           <img
             style={{
               width: "70px",
