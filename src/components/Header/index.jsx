@@ -41,7 +41,7 @@ const Header = () => {
             <div data-aos={"fade-right"} className="logo">
               <NavLink to="/">
                 <img src={logo} alt="" />
-                <span className="logo-title">softdez</span>
+                <span className="logo-title">dezex</span>
               </NavLink>
             </div>
             <nav data-aos={"fade-left"}>

@@ -51,3 +51,8 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const Sale = styled.div`
+  padding: 50px 0;
+  background: rgb(242, 242, 242);
+`;
