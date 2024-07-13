@@ -3,7 +3,7 @@ import { Container } from "./style";
 
 const ServiceBox = ({ bg, title, desc, onClick }) => {
   return (
-    <Container $bg={bg}>
+    <Container data-aos="zoom-in" $bg={bg}>
       <div className="service-title">{title || "Дезинфекция"}</div>
       <div className="service-content">
         <div className="service-desc">

@@ -28,7 +28,7 @@ const Home = () => {
       <Showcase />
       <About />
       <Services />
-      <Video />
+      {/* <Video /> */}
       <Comments />
       <Insect />
     </div>

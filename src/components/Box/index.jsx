@@ -3,7 +3,7 @@ import { Container } from "./style";
 
 const Box = ({ title, desc, mode, width }) => {
   return (
-    <Container $mode={mode} $width={width}>
+    <Container data-aos="zoom-in" $mode={mode} $width={width}>
       <div className="box">
         <div className="box__title">{title}</div>
         {desc && <div className="box__desc">{desc}</div>}

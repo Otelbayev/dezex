@@ -19,7 +19,7 @@ const ServiceID = () => {
       <Showcase data={data} />
       <div className="slide-in">
         <button className="phone">
-          <a href="tel:+998900375577">
+          <a href="tel:+998940375577">
             <i className="fa-solid fa-phone"></i> <span>Позвонить</span>
           </a>
         </button>

@@ -3,7 +3,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { Outlet } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
-import call from "../assets/call.gif";
 
 const scaleAnimation = keyframes`
   0%, 100% {
@@ -79,7 +78,7 @@ const Universal = () => {
       <Footer />
       <div className="slide-in">
         <button className="phone">
-          <a href="tel:+998900375577">
+          <a href="tel:+998940375577">
             <i className="fa-solid fa-phone"></i> <span>Позвонить</span>
           </a>
         </button>

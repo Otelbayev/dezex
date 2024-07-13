@@ -11,7 +11,7 @@ export const Container = styled.div`
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  z-index: -2;
+  z-index: 0;
   color: #fff;
   overflow: hidden;
   display: flex;

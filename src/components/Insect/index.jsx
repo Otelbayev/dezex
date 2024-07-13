@@ -35,7 +35,7 @@ const Insect = () => {
       <Sale>
         <div className="root-container">
           <div className="root-wrapper">
-            <div className="content">
+            <div className="content" data-aos="zoom-in">
               <div className="content__left">
                 <div className="content__left__title">
                   Закажите бесплатную консультацию прямо сейчас!
