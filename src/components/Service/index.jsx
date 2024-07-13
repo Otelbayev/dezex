@@ -45,6 +45,25 @@ const Service = () => {
                   <span className="per">10%</span> скидку на все наши услуги
                 </div>
               </div>
+              <div className="content__right">
+                <div className="content__right__box">
+                  <div className="content__right__box__title">
+                    Оставить заявку
+                  </div>
+                  <button className="phone">
+                    <a href="tel:+998900375577">
+                      <i className="fa-solid fa-phone"></i>{" "}
+                      <span>Позвонить</span>
+                    </a>
+                  </button>
+                  <button className="tel">
+                    <a href="https://t.me/asadbek5577">
+                      <i className="fa-brands fa-telegram"></i>{" "}
+                      <span>Написать</span>
+                    </a>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
