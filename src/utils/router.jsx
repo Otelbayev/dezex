@@ -1,5 +1,5 @@
 import Home from "../pages/Home";
-import ServiceID from "../pages/ServiceID";
+import InsectID from "../pages/InsectID";
 export const router = [
   {
     id: 1,
@@ -8,7 +8,7 @@ export const router = [
   },
   {
     id: 3,
-    path: "/services/:id",
-    element: <ServiceID />,
+    path: "/insect/:id",
+    element: <InsectID />,
   },
 ];

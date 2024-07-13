@@ -7,6 +7,7 @@ export const useScrollContext = () => useContext(ScrollContext);
 const ScrollContextProvider = ({ children }) => {
   const contactRef = useRef();
   const aboutRef = useRef();
+  const insectRef = useRef();
   const serviceRef = useRef();
   const commentRef = useRef();
   const [scroll, setScroll] = useState("");
@@ -16,6 +17,7 @@ const ScrollContextProvider = ({ children }) => {
         contactRef,
         aboutRef,
         serviceRef,
+        insectRef,
         commentRef,
         scroll,
         setScroll,

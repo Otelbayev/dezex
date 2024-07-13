@@ -3,15 +3,15 @@ import bg from "../../assets/bg3.jpg";
 import bg1 from "../../assets/bg.jpg";
 
 export const Container = styled.div`
-  /* margin-top: 100px;  */
+  margin-top: 100px;
   position: relative;
   width: 100%;
   height: calc(100dvh - 100px);
-  background-image: url("${bg1}");
+  background-image: ${({ $bg }) => `url(${$bg || bg1})`};
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  z-index: 1;
+  z-index: -2;
   color: #fff;
   overflow: hidden;
   display: flex;
@@ -19,18 +19,21 @@ export const Container = styled.div`
 
   .showcase {
     display: flex;
-    flex-direction: column;
-    gap: 60px;
     align-items: center;
-    justify-content: center;
-    &__title {
-      font-size: 60px;
-      font-weight: 700;
-      text-align: center;
+    gap: 20px;
+    &__left {
+      width: 60%;
+      &__title {
+        font-size: 50px;
+        font-weight: 700;
+      }
+      &__mintitle {
+        font-size: 25px;
+        margin-top: 10px;
+      }
     }
-    &__mintitle {
-      font-size: 30px;
-      text-align: center;
+    &__right {
+      width: 40%;
     }
   }
 
@@ -44,29 +47,46 @@ export const Container = styled.div`
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
   }
-  @media screen and (max-width: 700px) {
-    height: calc(100dvh - 80px);
-    /* margin-top: 80px; */
-    background-image: url("${bg}");
+
+  @media (max-width: 1000px) {
     .showcase {
-      gap: 30px;
-      &__title {
-        font-size: 36px;
+      flex-direction: column;
+      &__left {
+        width: 100%;
+        text-align: center;
+        &__title {
+          font-size: 40px;
+        }
+        &__mintitle {
+          font-size: 20px;
+        }
       }
-      &__mintitle {
-        font-size: 20px;
+      &__right {
+        width: 100%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    margin-top: 80px;
+    height: calc(100dvh - 80px);
+    background-image: ${({ $bg }) => `url(${$bg || bg})`};
+    .showcase {
+      &__left {
+        &__title {
+          font-size: 36px;
+        }
+        &__mintitle {
+          font-size: 20px;
+        }
       }
     }
   }
   @media screen and (max-width: 450px) {
     .showcase {
-      &__title {
-        font-size: 30px;
-      }
-      form {
-        width: 100%;
-        label {
-          font-size: 18px;
+      &__left {
+        &__title {
+          font-size: 30px;
         }
       }
     }

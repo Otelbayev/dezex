@@ -14,7 +14,7 @@ const scaleAnimation = keyframes`
   }
 `;
 
-const Root = styled.div`
+export const Root = styled.div`
   overflow: hidden;
   position: relative;
   .slide-in {
@@ -78,16 +78,6 @@ const Universal = () => {
       <Outlet />
       <Footer />
       <div className="slide-in">
-        {/* <a href="tel:+998900375577">
-          <img
-            style={{
-              width: "70px",
-              height: "70px",
-            }}
-            src={call}
-            alt=""
-          />
-        </a> */}
         <button className="phone">
           <a href="tel:+998900375577">
             <i className="fa-solid fa-phone"></i> <span>Позвонить</span>

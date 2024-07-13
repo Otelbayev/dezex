@@ -1,8 +1,12 @@
 import styled from "styled-components";
 
 export const Root = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   background-color: #ffffff;
+  z-index: 99;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
@@ -114,7 +118,7 @@ export const Wrapper = styled.div`
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        height: 230px;
+        height: 260px;
         background-color: #fff;
         padding: 20px;
         gap: 20px;

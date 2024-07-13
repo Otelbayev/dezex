@@ -1,13 +1,17 @@
 import img1 from "../assets/img1.jpeg";
 import img2 from "../assets/img2.jpeg";
-import img3 from "../assets/img3.jpeg";
 import img4 from "../assets/img4.jpeg";
 import img5 from "../assets/img5.jpeg";
 import img6 from "../assets/img6.jpeg";
 import img7 from "../assets/img7.jpeg";
 import img8 from "../assets/img8.jpeg";
 import img9 from "../assets/img9.jpeg";
-import img10 from "../assets/img10.jpeg";
+
+import ser1 from "../assets/ser1.jpg";
+import ser2 from "../assets/ser2.jpg";
+import ser3 from "../assets/ser3.jpg";
+import ser4 from "../assets/ser4.jpg";
+import ser5 from "../assets/ser5.jpg";
 
 export const data = [
   {
@@ -257,5 +261,38 @@ export const data = [
                             <p></p>
 
                         </div>  `,
+  },
+];
+
+export const service = [
+  {
+    id: 1,
+    title: "Дезинфекция",
+    desc: "Дезинфекция помещений после смерти человека, а также от бактерий, микробов, плесени, грибка, коронавируса.",
+    img: ser1,
+  },
+  {
+    id: 2,
+    title: "Дезинсекция",
+    desc: "Дезинсекция от клопов, кожеедов, муравьев, мух, тараканов, блох, моли, клещей, комаров, мошек, вшей, пауков, ос и других насекомых.",
+    img: ser2,
+  },
+  {
+    id: 3,
+    title: "Дератизация",
+    desc: "Дератизация от мышей, крыс, кротов. Избавим от грызунов с первого раза.",
+    img: ser3,
+  },
+  {
+    id: 4,
+    title: "Обработка туманом",
+    desc: "Профессиональная дезинсекция от насекомых холодным (горячим) туманом.",
+    img: ser4,
+  },
+  {
+    id: 5,
+    title: "Демеркуризация",
+    desc: "Демеркуриза́ция — удаление ртути и её соединений физико-химическими или механическими способами с целью исключения отравления людей и животных.",
+    img: ser5,
   },
 ];

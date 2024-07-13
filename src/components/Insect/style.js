@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   padding: 20px 0;
-
   .content {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -87,50 +86,7 @@ export const Sale = styled.div`
     }
     &__right {
       width: 50%;
-      &__box {
-        background: #fff;
-        border-radius: 5px;
-        padding: 30px 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 10px;
-        width: 350px;
-        &__title {
-          font-size: 30px;
-          font-weight: 600;
-          margin-bottom: 10px;
-        }
-        button {
-          padding: 10px;
-          width: 220px;
-          border-radius: 5px;
-          border: none;
-          i {
-            font-size: 23px;
-            color: #fff;
-          }
-          a {
-            display: flex;
-            color: #fff;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            text-decoration: none;
-            span {
-              font-size: 16px;
-              font-weight: 700;
-            }
-          }
-        }
-        .phone {
-          background-color: #00ff26cf;
-        }
-        .tel {
-          background-color: #00a2ffcf;
-        }
-      }
+    
     }
   }
 

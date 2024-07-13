@@ -3,17 +3,20 @@ import Showcase from "../components/Showcase";
 import About from "../components/About";
 import Video from "../components/Video";
 import Comments from "../components/Comments";
-import Service from "../components/Service";
+import Insect from "../components/Insect";
 import { useScrollContext } from "../context/ScrollContext";
 import { useScroll } from "../hooks/useScroll";
+import Services from "../components/Services";
 
 const Home = () => {
-  const { scroll, commentRef, aboutRef, serviceRef } = useScrollContext();
+  const { scroll, commentRef, aboutRef, serviceRef, insectRef } =
+    useScrollContext();
 
   const obj = {
     comment: commentRef,
     about: aboutRef,
     service: serviceRef,
+    insect: insectRef,
   };
 
   useEffect(() => {
@@ -24,9 +27,10 @@ const Home = () => {
     <div>
       <Showcase />
       <About />
+      <Services />
       <Video />
       <Comments />
-      <Service />
+      <Insect />
     </div>
   );
 };

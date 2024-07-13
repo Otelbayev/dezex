@@ -13,6 +13,7 @@ export const Container = styled.div`
   color: #fff;
   overflow: hidden;
 
+  padding-bottom: 40px;
   .content {
     padding: 20px 0;
     .lists {

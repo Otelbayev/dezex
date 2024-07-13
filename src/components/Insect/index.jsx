@@ -3,23 +3,24 @@ import { data } from "../../utils/mock";
 import { Container, Sale } from "./style";
 import { useNavigate } from "react-router-dom";
 import { useScrollContext } from "../../context/ScrollContext";
+import Box from "../Box";
 
-const Service = () => {
+const Insect = () => {
   const navigate = useNavigate();
-  const { serviceRef } = useScrollContext();
+  const { insectRef } = useScrollContext();
   return (
     <div>
       <Container>
         <div className="root-container">
-          <div className="title" ref={serviceRef}>
-            Услуги
+          <div className="title" ref={insectRef}>
+            Насекомые
           </div>
           <div className="content">
             {data.map((e) => (
               <div
                 className="cart"
                 data-aos="fade-up"
-                onClick={() => navigate(`services/${e.id}`)}
+                onClick={() => navigate(`insect/${e.id}`)}
                 key={e.id}
               >
                 <img src={e.img} alt="" />
@@ -46,23 +47,12 @@ const Service = () => {
                 </div>
               </div>
               <div className="content__right">
-                <div className="content__right__box">
-                  <div className="content__right__box__title">
-                    Оставить заявку
-                  </div>
-                  <button className="phone">
-                    <a href="tel:+998900375577">
-                      <i className="fa-solid fa-phone"></i>{" "}
-                      <span>Позвонить</span>
-                    </a>
-                  </button>
-                  <button className="tel">
-                    <a href="https://t.me/asadbek5577">
-                      <i className="fa-brands fa-telegram"></i>{" "}
-                      <span>Написать</span>
-                    </a>
-                  </button>
-                </div>
+                <Box
+                  title="Оставить заявку"
+                  // desc="Оставьте онлайн-заявку и получите скидку 10%"
+                  // mode="dark"
+                  // width="400px"
+                />
               </div>
             </div>
           </div>
@@ -72,4 +62,4 @@ const Service = () => {
   );
 };
 
-export default Service;
+export default Insect;

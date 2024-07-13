@@ -8,6 +8,7 @@ import "../public/fontawesome/css/all.min.css";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import ScrollContextProvider from "./context/ScrollContext";
+import ServiceID from "./pages/ServiceID";
 AOS.init({
   duration: 800,
 });
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
               <Route key={e.id} path={e.path} element={e.element} />
             ))}
           </Route>
+          <Route element={<ServiceID />} path="/service/:id" />
         </Routes>
       </BrowserRouter>
     </ScrollContextProvider>
