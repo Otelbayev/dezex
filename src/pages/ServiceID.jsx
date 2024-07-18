@@ -1,44 +1,35 @@
 import React, { useEffect } from "react";
+import Showcase from "../components/Showcase";
+import { service } from "../utils/mock";
 import { useParams } from "react-router-dom";
-import { data } from "../utils/mock";
-import styled from "styled-components";
-
-const Content = styled.div`
-  padding: 20px 0;
-  text-align: center;
-  img {
-    width: 60%;
-    margin: 20px 0;
-  }
-  h3,
-  h4 {
-    padding: 10px 0;
-  }
-  .none {
-    text-align: start;
-  }
-`;
+import Header from "./../components/Header/index";
+import { Root } from "../components/Universal";
 
 const ServiceID = () => {
+  const { id } = useParams();
+  const data = service.find((e) => e.id == id);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  const { id } = useParams();
-
-  const res = data.find((e) => e.id == id);
-
   return (
-    <div className="root-container" style={{ marginTop: "100px" }}>
-      <Content>
-        <div className="title">{res.title}</div>
-        <img src={res.img} alt="" />
-        <div
-          className="none"
-          dangerouslySetInnerHTML={{ __html: res.desc }}
-        ></div>
-      </Content>
-    </div>
+    <Root>
+      <Header />
+      <Showcase data={data} />
+      <div className="slide-in">
+        <button className="phone">
+          <a href="tel:+998940375577">
+            <i className="fa-solid fa-phone"></i> <span>Позвонить</span>
+          </a>
+        </button>
+        <button className="tel">
+          <a href="https://t.me/asadbek5577">
+            <i className="fa-brands fa-telegram"></i> <span>Написать</span>
+          </a>
+        </button>
+      </div>
+    </Root>
   );
 };
 

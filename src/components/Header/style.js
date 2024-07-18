@@ -118,7 +118,7 @@ export const Wrapper = styled.div`
         flex-direction: column;
         align-items: flex-start;
         width: 100%;
-        height: 230px;
+        height: 260px;
         background-color: #fff;
         padding: 20px;
         gap: 20px;

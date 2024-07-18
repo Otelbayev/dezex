@@ -7,7 +7,7 @@ import { useScrollContext } from "../../context/ScrollContext";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
-  const { contactRef, serviceRef, commentRef, aboutRef, setScroll } =
+  const { contactRef, insectRef, commentRef, aboutRef, setScroll, serviceRef } =
     useScrollContext();
   const navigate = useNavigate();
 
@@ -41,7 +41,7 @@ const Header = () => {
             <div data-aos={"fade-right"} className="logo">
               <NavLink to="/">
                 <img src={logo} alt="" />
-                <span className="logo-title">softdez</span>
+                <span className="logo-title">dezex</span>
               </NavLink>
             </div>
             <nav data-aos={"fade-left"}>
@@ -57,6 +57,12 @@ const Header = () => {
                   className="nav__list__item"
                 >
                   <a>Услуги</a>
+                </li>
+                <li
+                  onClick={() => handleClick("insect", insectRef)}
+                  className="nav__list__item"
+                >
+                  <a>Насекомые</a>
                 </li>
                 <li
                   onClick={() => handleClick("comment", commentRef)}
