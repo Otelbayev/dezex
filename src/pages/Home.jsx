@@ -23,6 +23,14 @@ const Home = () => {
     useScroll(obj[scroll]);
   }, [scroll]);
 
+  useEffect(() => {
+    if (window.gtag) {
+      window.gtag("event", "conversion", {
+        send_to: "AW-16648129567/1qmYCMSkisQZEJ-YuYI-",
+      });
+    }
+  }, []);
+
   return (
     <div>
       <Showcase />
