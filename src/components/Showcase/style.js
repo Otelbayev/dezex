@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bg from "../../assets/bg3.jpg";
+import bg from "../../assets/bg.webp";
 import bg1 from "../../assets/bg.jpg";
 
 export const Container = styled.div`
@@ -7,7 +7,7 @@ export const Container = styled.div`
   position: relative;
   width: 100%;
   height: calc(100dvh - 100px);
-  background-image: ${({ $bg }) => `url(${$bg || bg1})`};
+  background-image: ${({ $bg }) => `url(${$bg || bg})`};
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
