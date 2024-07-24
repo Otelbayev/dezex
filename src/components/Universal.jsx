@@ -19,7 +19,7 @@ export const Root = styled.div`
   .slide-in {
     position: fixed;
     z-index: 99;
-    bottom: 20px;
+    bottom: 10px;
     right: 50%;
     transform: translateX(50%);
     display: flex;

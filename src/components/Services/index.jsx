@@ -17,12 +17,13 @@ const Services = () => {
             Услуги
           </div>
           <div className="content-s">
-            {service.map((e) => (
+            {service.map((e, index) => (
               <ServiceBox
                 onClick={() => navigate(`service/${e.id}`)}
                 title={e.title}
                 desc={e.desc}
                 bg={e.img}
+                key={index}
               />
             ))}
           </div>

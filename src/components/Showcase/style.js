@@ -74,10 +74,10 @@ export const Container = styled.div`
     .showcase {
       &__left {
         &__title {
-          font-size: 36px;
+          font-size: 30px;
         }
         &__mintitle {
-          font-size: 20px;
+          font-size: 16px;
         }
       }
     }

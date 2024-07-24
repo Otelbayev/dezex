@@ -5,7 +5,7 @@ export const Container = styled.div`
     background: ${({ $mode }) =>
       $mode === "dark" ? "rgba(0,0,0,0.5)" : "#fff"};
     border-radius: 5px;
-    padding: 30px 20px;
+    padding: 30px 50px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,6 +13,7 @@ export const Container = styled.div`
     gap: 10px;
     width: ${({ $width }) => $width || "350px"};
     &__title {
+      text-align: center;
       font-size: 30px;
       font-weight: 600;
       margin: 10px;
@@ -25,9 +26,23 @@ export const Container = styled.div`
       text-align: center;
       margin-bottom: 10px;
     }
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 5px;
+      input {
+        border: 1px solid var(--dark);
+        padding: 8px 10px;
+        border-radius: 3px;
+        outline: none;
+        font-size: 16px;
+      }
+    }
     button {
       padding: 10px;
-      width: 220px;
+      cursor: pointer;
+      width: 100%;
       border-radius: 5px;
       border: none;
       i {
@@ -58,6 +73,9 @@ export const Container = styled.div`
     .box {
       &__title {
         font-size: 25px;
+      }
+      padding: 20px;
+      form {
       }
     }
   }
