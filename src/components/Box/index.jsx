@@ -4,17 +4,14 @@ import { Container } from "./style";
 const Box = ({ title, desc, mode, width }) => {
   const [phone, setPhone] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  // https://api.telegram.org/bot6917338241:AAHWudXXGskysZBSUMhQ5Cvep2FMrk1qdCE/getUpdates
 
-    if (!phone) {
-      alert("Неправильный номер телефона.");
-      return;
-    }
-
-    const botToken = "6917338241:AAHWudXXGskysZBSUMhQ5Cvep2FMrk1qdCE";
-    const chatId = "5942455501";
-    const message = `☎ Phone: ${phone.split(" ").join("").split("-").join("")}`;
+  async function sentToBot(botToken, chatId) {
+    const message = ` \n📫⏳ Company Dezex \n\n☎📞 Phone: ${phone
+      .split(" ")
+      .join("")
+      .split("-")
+      .join("")} \n `;
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
     const data = {
@@ -22,23 +19,36 @@ const Box = ({ title, desc, mode, width }) => {
       text: message,
     };
 
-    try {
-      const response = await fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+    const response = await fetch(url, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    return response;
+  }
 
-      if (response.ok) {
-        alert("Сообщение успешно отправлено!");
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!phone) {
+      alert("Неправильный номер телефона.");
+      return;
+    }
+    try {
+      const res1 = await sentToBot(
+        "6917338241:AAHWudXXGskysZBSUMhQ5Cvep2FMrk1qdCE",
+        "5942455501"
+      );
+      // const res2 = await sentToBot(
+      //   "7271486951:AAEOY1KwrGDJ2DyXw0JOQHsOPIjq8tydR68",
+      //   "5942455501"
+      // );
+      if (res1.ok) {
+        alert("Сообщение отправлено.");
         setPhone("");
-      } else {
-        alert("Не удалось отправить сообщение.");
       }
-    } catch (error) {
-      console.error("Error:", error);
+    } catch (err) {
       alert("Error sending message.");
     }
   };
