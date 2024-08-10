@@ -71,7 +71,7 @@ const Box = ({ title, desc, mode, width }) => {
             placeholder="90-037-55-77"
           />
           <button
-            disabled={true}
+            disabled={loading}
             style={{
               background: "coral",
               opacity: loading ? 0.5 : 1,
