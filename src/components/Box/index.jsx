@@ -32,12 +32,12 @@ const Box = ({ title, desc, mode, width }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
     if (!phone) {
       alert("Неправильный номер телефона.");
       return;
     }
     try {
+      setLoading(true);
       const res1 = await sentToBot(
         "6917338241:AAHWudXXGskysZBSUMhQ5Cvep2FMrk1qdCE",
         "5942455501"
