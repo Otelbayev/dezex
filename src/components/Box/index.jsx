@@ -3,6 +3,7 @@ import { Container } from "./style";
 
 const Box = ({ title, desc, mode, width }) => {
   const [phone, setPhone] = useState("");
+  const [loading, setLoading] = useState(false);
 
   // https://api.telegram.org/bot6917338241:AAHWudXXGskysZBSUMhQ5Cvep2FMrk1qdCE/getUpdates
 
@@ -31,6 +32,7 @@ const Box = ({ title, desc, mode, width }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     if (!phone) {
       alert("Неправильный номер телефона.");
       return;
@@ -40,16 +42,18 @@ const Box = ({ title, desc, mode, width }) => {
         "6917338241:AAHWudXXGskysZBSUMhQ5Cvep2FMrk1qdCE",
         "5942455501"
       );
-      // const res2 = await sentToBot(
-      //   "7271486951:AAEOY1KwrGDJ2DyXw0JOQHsOPIjq8tydR68",
-      //   "5942455501"
-      // );
+      const res2 = await sentToBot(
+        "6917338241:AAHWudXXGskysZBSUMhQ5Cvep2FMrk1qdCE",
+        "5162180249"
+      );
       if (res1.ok) {
         alert("Сообщение отправлено.");
         setPhone("");
+        setLoading(false);
       }
     } catch (err) {
       alert("Error sending message.");
+      setLoading(false);
     }
   };
 
@@ -66,9 +70,17 @@ const Box = ({ title, desc, mode, width }) => {
             onChange={(e) => setPhone(e.target.value)}
             placeholder="90-037-55-77"
           />
-          <button style={{ background: "coral" }} type="submit">
+          <button
+            disabled={true}
+            style={{
+              background: "coral",
+              opacity: loading ? 0.5 : 1,
+              cursor: loading ? "wait" : "pointer",
+            }}
+            type="submit"
+          >
             <a>
-              <span>Отправить</span>
+              <span>{loading ? "Отправка..." : "Отправить"}</span>
             </a>
           </button>
         </form>
