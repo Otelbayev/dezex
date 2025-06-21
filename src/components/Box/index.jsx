@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Container } from "./style";
 
 const Box = ({ title, desc, mode, width }) => {
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
-
-  // https://api.telegram.org/bot6917338241:AAHWudXXGskysZBSUMhQ5Cvep2FMrk1qdCE/getUpdates
 
   async function sentToBot(botToken, chatId) {
     const message = ` \n📫⏳ Company Dezex \n\n☎📞 Phone: ${phone
@@ -29,30 +27,50 @@ const Box = ({ title, desc, mode, width }) => {
     });
     return response;
   }
+  // AKfycbxUssMwAkIDsy_EdOYN7k6bbxgpydE7OuFphInITHWYiM6By02a0MxdxsdLiu-wG-r8mQ
+  // https://script.google.com/macros/s/AKfycbxUssMwAkIDsy_EdOYN7k6bbxgpydE7OuFphInITHWYiM6By02a0MxdxsdLiu-wG-r8mQ/exec
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!phone) {
+
+    // Oddiy telefon raqam validatsiyasi (raqamlar va kamida 7 belgidan iborat)
+    const phoneRegex = /^[\d+()\s-]{7,}$/;
+    if (!phoneRegex.test(phone)) {
       alert("Неправильный номер телефона.");
       return;
     }
+
     try {
       setLoading(true);
-      const res1 = await sentToBot(
-        "6917338241:AAHWudXXGskysZBSUMhQ5Cvep2FMrk1qdCE",
-        "5942455501"
+
+      const response = await fetch(
+        "https://script.google.com/macros/s/AKfycbxUssMwAkIDsy_EdOYN7k6bbxgpydE7OuFphInITHWYiM6By02a0MxdxsdLiu-wG-r8mQ/exec",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            phone: phone,
+            date: new Date().toLocaleString(),
+          }),
+        }
       );
-      const res2 = await sentToBot(
-        "6917338241:AAHWudXXGskysZBSUMhQ5Cvep2FMrk1qdCE",
-        "5162180249"
-      );
-      if (res1.ok) {
+
+      const text = await response.text();
+      console.log("Status:", response.status);
+      console.log("Response:", text);
+
+      if (response.ok) {
         alert("Сообщение отправлено.");
         setPhone("");
-        setLoading(false);
+      } else {
+        alert("Ошибка при отправке. Повторите попытку.");
       }
     } catch (err) {
-      alert("Error sending message.");
+      console.error("Xatolik:", err);
+      alert("Ошибка при отправке запроса.");
+    } finally {
       setLoading(false);
     }
   };
