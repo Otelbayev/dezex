@@ -24,7 +24,7 @@ const ServiceID = () => {
           </a>
         </button>
         <button className="tel">
-          <a href="https://t.me/asadbek5577">
+          <a href="https://t.me/dezexuzz">
             <i className="fa-brands fa-telegram"></i> <span>Написать</span>
           </a>
         </button>

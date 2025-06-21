@@ -5,71 +5,56 @@ const Box = ({ title, desc, mode, width }) => {
   const [phone, setPhone] = useState("");
   const [loading, setLoading] = useState(false);
 
-  async function sentToBot(botToken, chatId) {
-    const message = ` \n📫⏳ Company Dezex \n\n☎📞 Phone: ${phone
-      .split(" ")
-      .join("")
-      .split("-")
-      .join("")} \n `;
+  async function sendToBot(botToken, chatId, phone) {
+    const sanitizedPhone = phone.replace(/[\s\-]/g, "");
+    const message = `📫⏳ Company Dezex\n\n☎📞 Phone: ${sanitizedPhone}`;
 
     const url = `https://api.telegram.org/bot${botToken}/sendMessage`;
-    const data = {
-      chat_id: chatId,
-      text: message,
-    };
 
     const response = await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        chat_id: chatId,
+        text: message,
+      }),
     });
-    return response;
+
+    return response.ok;
   }
-  // AKfycbxUssMwAkIDsy_EdOYN7k6bbxgpydE7OuFphInITHWYiM6By02a0MxdxsdLiu-wG-r8mQ
-  // https://script.google.com/macros/s/AKfycbxUssMwAkIDsy_EdOYN7k6bbxgpydE7OuFphInITHWYiM6By02a0MxdxsdLiu-wG-r8mQ/exec
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Oddiy telefon raqam validatsiyasi (raqamlar va kamida 7 belgidan iborat)
-    const phoneRegex = /^[\d+()\s-]{7,}$/;
+    const phoneRegex = /^[\d\s()+-]{7,}$/;
     if (!phoneRegex.test(phone)) {
       alert("Неправильный номер телефона.");
       return;
     }
 
-    try {
-      setLoading(true);
+    setLoading(true);
 
-      const response = await fetch(
-        "https://script.google.com/macros/s/AKfycbxUssMwAkIDsy_EdOYN7k6bbxgpydE7OuFphInITHWYiM6By02a0MxdxsdLiu-wG-r8mQ/exec",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            phone: phone,
-            date: new Date().toLocaleString(),
-          }),
-        }
+    try {
+      const botToken = "6917338241:AAHWudXXGskysZBSUMhQ5Cvep2FMrk1qdCE";
+      const chatIds = ["5942455501", "5162180249"];
+
+      const sendResults = await Promise.all(
+        chatIds.map((chatId) => sendToBot(botToken, chatId, phone))
       );
 
-      const text = await response.text();
-      console.log("Status:", response.status);
-      console.log("Response:", text);
+      const allSuccess = sendResults.every((res) => res === true);
 
-      if (response.ok) {
+      if (allSuccess) {
         alert("Сообщение отправлено.");
         setPhone("");
       } else {
-        alert("Ошибка при отправке. Повторите попытку.");
+        alert("Некоторые сообщения не были доставлены.");
       }
-    } catch (err) {
-      console.error("Xatolik:", err);
-      alert("Ошибка при отправке запроса.");
+    } catch (error) {
+      console.error("Telegramga yuborishda xatolik:", error);
+      alert("Ошибка при отправке сообщения.");
     } finally {
       setLoading(false);
     }
@@ -108,7 +93,7 @@ const Box = ({ title, desc, mode, width }) => {
           </a>
         </button> */}
         {/*<button className="tel">
-          <a href="https://t.me/asadbek5577">
+          <a href="https://t.me/dezexuzz">
             <i className="fa-brands fa-telegram"></i> <span>Написать</span>
           </a>
         </button> */}
