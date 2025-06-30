@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bg from "../../assets/sliderbg.jpg";
+import bg from "../../assets/bg-footer.jpg";
 
 export const Container = styled.div`
   padding: 20px 0;

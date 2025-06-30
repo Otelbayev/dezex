@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bg from "../../assets/bg4.webp";
+import bg from "../../assets/bg-footer.jpg";
 
 export const Container = styled.div`
   position: relative;

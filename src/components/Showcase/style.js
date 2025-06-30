@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import bg from "../../assets/bg.webp";
-import bg1 from "../../assets/bg.jpg";
+import bg from "../../assets/bg1.webp";
 
 export const Container = styled.div`
   margin-top: 100px;
