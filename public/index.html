@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#0d93ec" />
+  <meta name="theme-color" content="#0b3d24" />
 
   <!-- ===================== SEO: Primary ===================== -->
   <title>Дезинфекция в Ташкенте — уничтожение тараканов, клопов, грызунов | Dezex</title>
@@ -32,7 +32,7 @@
   <meta property="og:url" content="https://dezex.uz/" />
   <meta property="og:title" content="Дезинфекция в Ташкенте — тараканы, клопы, грызуны | Dezex" />
   <meta property="og:description" content="Профессиональная дезинсекция, дератизация и дезинфекция в Ташкенте. Гарантия 1 год, выезд за час, безопасно для детей и животных." />
-  <meta property="og:image" content="https://dezex.uz/assets/img/og-image.jpg" />
+  <meta property="og:image" content="https://dezex.uz/assets/img/showcase-1.png" />
 
   <link rel="icon" href="./assets/img/favicon.svg" />
   <link rel="manifest" href="./site.webmanifest" />
@@ -90,6 +90,7 @@
 
       <nav class="nav-links" aria-label="Main">
         <a href="#services" class="nav-link" data-i18n="nav.services">Услуги</a>
+        <a href="#work" class="nav-link" data-i18n="nav.work">Работы</a>
         <a href="#why" class="nav-link" data-i18n="nav.why">Почему мы</a>
         <a href="#how" class="nav-link" data-i18n="nav.how">Как работаем</a>
         <a href="#prices" class="nav-link" data-i18n="nav.prices">Цены</a>
@@ -109,10 +110,18 @@
 
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
-    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-media" aria-hidden="true">
+      <video class="hero-video-bg" autoplay muted loop playsinline preload="auto" poster="./assets/img/showcase-2.png">
+        <source src="./assets/videos/hero.mp4" type="video/mp4" />
+      </video>
+      <div class="hero-overlay"></div>
+      <div class="hero-glow hero-glow--1"></div>
+      <div class="hero-glow hero-glow--2"></div>
+    </div>
+
     <div class="container hero-inner">
       <div class="hero-copy">
-        <span class="eyebrow reveal" data-i18n="hero.eyebrow">● Дезинфекция №1 в Ташкенте</span>
+        <span class="eyebrow reveal" data-i18n="hero.eyebrow">Дезинфекция №1 в Ташкенте</span>
         <h1 class="hero-title reveal" data-i18n="hero.title">Избавим ваш дом от тараканов, клопов и грызунов</h1>
         <p class="hero-sub reveal" data-i18n="hero.sub">Профессиональная обработка с гарантией 1 год. Безопасно для детей и домашних животных. Выезд по Ташкенту в течение часа.</p>
 
@@ -120,6 +129,9 @@
         <form class="hero-form reveal" data-form="hero" novalidate>
           <input type="text" name="website" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <div class="field-join">
+            <span class="field-ico" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L16 13l5 2v4a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1Z"/></svg>
+            </span>
             <input class="input" type="tel" name="phone" inputmode="numeric" required
                    placeholder="+998 (__) ___ __ __" data-phone aria-label="Телефон" />
             <button class="btn btn-primary" type="submit" data-i18n="hero.formBtn">Заказать звонок</button>
@@ -135,15 +147,28 @@
         </ul>
       </div>
 
-      <!-- Animatsion video shu yerga (assets/videos/hero.mp4) -->
+      <!-- Animatsion video karta -->
       <div class="hero-art reveal" aria-hidden="true">
-        <!--
-        <video class="hero-video" autoplay muted loop playsinline poster="./assets/img/hero-poster.jpg">
-          <source src="./assets/videos/hero.mp4" type="video/mp4" />
-        </video>
-        -->
-        <div class="hero-mark"></div>
+        <div class="hero-card">
+          <video class="hero-card-video" autoplay muted loop playsinline preload="auto" poster="./assets/img/showcase-1.png">
+            <source src="./assets/videos/process.mp4" type="video/mp4" />
+          </video>
+          <span class="hero-card-badge">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+            <em data-i18n="hero.b3">гарантии</em>
+          </span>
+        </div>
+        <span class="hero-float hero-float--1">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3l7 3v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></svg>
+        </span>
+        <span class="hero-float hero-float--2">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </span>
       </div>
+    </div>
+
+    <div class="hero-wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 90" preserveAspectRatio="none"><path d="M0,50 C240,90 480,10 720,40 C960,70 1200,20 1440,50 L1440,90 L0,90 Z"/></svg>
     </div>
   </section>
 
@@ -196,6 +221,33 @@
             <li data-i18n="svc.dis.3">Плесень</li>
           </ul>
         </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOWCASE (real photos) ============ -->
+  <section class="section showcase" id="work">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="section-kicker" data-i18n="work.kicker">В деле</span>
+        <h2 class="section-title" data-i18n="work.title">Как проходит обработка</h2>
+        <p class="section-lead" data-i18n="work.lead">Профессиональное оборудование и защита — работаем аккуратно в любом помещении.</p>
+      </div>
+      <div class="showcase-grid">
+        <figure class="shot shot--wide reveal">
+          <img src="./assets/img/showcase-1.png" alt="Обработка спальни от тараканов и клопов" loading="lazy" />
+          <figcaption>
+            <span class="shot-tag" data-i18n="svc.ins.t">Дезинсекция</span>
+            <strong data-i18n="work.c1">Спальни, кухни и мягкая мебель</strong>
+          </figcaption>
+        </figure>
+        <figure class="shot reveal">
+          <img src="./assets/img/showcase-2.png" alt="Мастер обрабатывает квартиру от насекомых" loading="lazy" />
+          <figcaption>
+            <span class="shot-tag" data-i18n="feat.e.t">Безопасно</span>
+            <strong data-i18n="work.c2">Средства защиты и сертифицированные препараты</strong>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
