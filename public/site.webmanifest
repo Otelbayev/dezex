@@ -1,0 +1,12 @@
+{
+  "name": "Dezex — дезинфекция в Ташкенте",
+  "short_name": "Dezex",
+  "description": "Дезинсекция, дератизация и дезинфекция в Ташкенте. Гарантия 1 год.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d93ec",
+  "icons": [
+    { "src": "/assets/img/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

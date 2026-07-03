@@ -1,0 +1,14 @@
+{
+  "name": "dezex",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Dezex — dezinfeksiya (tarakan, kandala, kemiruvchilar) kompaniyasi uchun bir sahifali sotuv sayti. RU/UZ, animatsion, Telegram bot integratsiyasi.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
