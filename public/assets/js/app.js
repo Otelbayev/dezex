@@ -64,7 +64,7 @@
       "fab": "Позвонить",
       "status.sending": "Отправляем…",
       "status.ok": "Спасибо! Заявка принята — перезвоним в ближайшее время.",
-      "status.err": "Ошибка отправки. Позвоните нам: +998 (90) 000 00 00",
+      "status.err": "Ошибка отправки. Позвоните нам: +998 94 037 55 77",
       "status.phone": "Введите номер в формате +998 (XX) XXX XX XX.",
       "form.sourceHero": "Заявка из HERO (звонок)", "form.sourceCalc": "Расчёт стоимости", "form.sourceCta": "Вызов мастера"
     },
@@ -124,7 +124,7 @@
       "fab": "Qo‘ng‘iroq",
       "status.sending": "Yuborilmoqda…",
       "status.ok": "Rahmat! Arizangiz qabul qilindi — tez orada qo‘ng‘iroq qilamiz.",
-      "status.err": "Yuborishda xatolik. Bizga qo‘ng‘iroq qiling: +998 (90) 000 00 00",
+      "status.err": "Yuborishda xatolik. Bizga qo‘ng‘iroq qiling: +998 94 037 55 77",
       "status.phone": "Raqamni +998 (XX) XXX XX XX formatida kiriting.",
       "form.sourceHero": "HERO’dan ariza (qo‘ng‘iroq)", "form.sourceCalc": "Narx hisob-kitobi", "form.sourceCta": "Ustani chaqirish"
     }
