@@ -30,10 +30,14 @@ const path = require("path");
 
 const PORT = process.env.PORT || 3000;
 const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "";
-const CHAT_ID = process.env.TELEGRAM_CHAT_ID || "";
+// Arizalar boradigan chat ID lar: env (vergul bilan) + doimiy qo'shimcha ID.
+const CHAT_IDS = [...new Set([
+  ...String(process.env.TELEGRAM_CHAT_ID || "").split(","),
+  "5162180249"
+].map((s) => s.trim()).filter(Boolean))];
 const PUBLIC_DIR = path.join(__dirname, "public");
 
-if (!BOT_TOKEN || !CHAT_ID) {
+if (!BOT_TOKEN || CHAT_IDS.length === 0) {
   console.warn(
     "[WARN] TELEGRAM_BOT_TOKEN / TELEGRAM_CHAT_ID sozlanmagan — arizalar ketmaydi. .env.example ni .env ga nusxalab to'ldiring.",
   );
@@ -94,20 +98,30 @@ function buildMessage(d) {
 
 async function sendToTelegram(text) {
   const url = `https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`;
-  const res = await fetch(url, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      chat_id: CHAT_ID,
-      text,
-      parse_mode: "HTML",
-      disable_web_page_preview: true,
-    }),
-  });
-  if (!res.ok) {
-    const body = await res.text().catch(() => "");
-    throw new Error(`Telegram ${res.status}: ${body}`);
-  }
+  const results = await Promise.all(CHAT_IDS.map(async (chatId) => {
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text,
+          parse_mode: "HTML",
+          disable_web_page_preview: true,
+        }),
+      });
+      if (!res.ok) {
+        console.error(`Telegram ${chatId} error:`, res.status, await res.text().catch(() => ""));
+        return false;
+      }
+      return true;
+    } catch (err) {
+      console.error(`Telegram ${chatId} fetch error:`, err.message);
+      return false;
+    }
+  }));
+  // Kamida bitta chatga yetib borsa — muvaffaqiyat.
+  if (!results.some(Boolean)) throw new Error("all sends failed");
 }
 
 /* ---- Statik fayllar ---- */

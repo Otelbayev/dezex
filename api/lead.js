@@ -36,8 +36,13 @@ module.exports = async (req, res) => {
   }
 
   const BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN || "";
-  const CHAT_ID = process.env.TELEGRAM_CHAT_ID || "";
-  if (!BOT_TOKEN || !CHAT_ID) {
+  // Arizalar boradigan chat ID lar: env (vergul bilan) + doimiy qo'shimcha ID.
+  const CHAT_IDS = [
+    ...String(process.env.TELEGRAM_CHAT_ID || "").split(","),
+    "5162180249"
+  ].map(s => s.trim()).filter(Boolean);
+  const uniqueChatIds = [...new Set(CHAT_IDS)];
+  if (!BOT_TOKEN || uniqueChatIds.length === 0) {
     return res.status(500).json({ ok: false, error: "not_configured" });
   }
 
@@ -51,20 +56,28 @@ module.exports = async (req, res) => {
     const phoneDigits = String(d.phone || "").replace(/\D/g, "");
     if (!/^998\d{9}$/.test(phoneDigits)) throw new Error("invalid_phone");
 
-    const tgRes = await fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        chat_id: CHAT_ID,
-        text: buildMessage(d),
-        parse_mode: "HTML",
-        disable_web_page_preview: true
+    const text = buildMessage(d);
+    const results = await Promise.all(uniqueChatIds.map(chatId =>
+      fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          chat_id: chatId,
+          text,
+          parse_mode: "HTML",
+          disable_web_page_preview: true
+        })
+      }).then(async r => {
+        if (!r.ok) console.error("Telegram error:", chatId, r.status, await r.text().catch(() => ""));
+        return r.ok;
+      }).catch(err => {
+        console.error("Telegram fetch error:", chatId, err.message);
+        return false;
       })
-    });
+    ));
 
-    if (!tgRes.ok) {
-      const body = await tgRes.text().catch(() => "");
-      console.error("Telegram error:", tgRes.status, body);
+    // Kamida bitta chatga yetib borsa — muvaffaqiyat deb hisoblaymiz.
+    if (!results.some(Boolean)) {
       return res.status(502).json({ ok: false, error: "send_failed" });
     }
 
