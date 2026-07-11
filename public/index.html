@@ -5,6 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#0b3d24" />
 
+  <!-- ===================== Google Ads (gtag.js) ===================== -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18315201408"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'AW-18315201408');
+
+    // Enhanced Conversions — mijoz ma'lumotlari (telefon) orqali aniqroq hisoblash
+    gtag('set', 'allow_enhanced_conversions', true);
+
+    // Google Ads konversiya sozlamalari.
+    // Google Ads → Goals → Conversions bo'limida har bir "Conversion action" yaratib,
+    // undan olingan "Conversion label"ni (masalan: AW-18315201408/AbC-D_efGh) shu yerga qo'ying.
+    window.DEZEX_ADS = {
+      id: 'AW-18315201408',
+      conversions: {
+        lead:     'AW-18315201408/XXXXXXXXXXXXXXXXX',   // Ariza yuborildi (asosiy konversiya)
+        phone:    'AW-18315201408/XXXXXXXXXXXXXXXXX',   // Telefon raqami bosildi
+        telegram: 'AW-18315201408/XXXXXXXXXXXXXXXXX'    // Telegram bosildi
+      }
+    };
+
+    // Konversiya yuborish yordamchisi. Label hali kiritilmagan bo'lsa — jim o'tadi.
+    window.trackAdsConversion = function(kind, params){
+      try {
+        var label = (window.DEZEX_ADS.conversions || {})[kind];
+        if (!label || label.indexOf('XXXX') !== -1) return;
+        gtag('event', 'conversion', Object.assign({ send_to: label }, params || {}));
+      } catch (e) {}
+    };
+  </script>
+
   <!-- ===================== SEO: Primary ===================== -->
   <title>Дезинфекция в Ташкенте — уничтожение тараканов, клопов, грызунов | Dezex</title>
   <meta name="description" content="Dezex — служба дезинфекции в Ташкенте. Уничтожение тараканов, клопов, муравьёв, грызунов. Дезинсекция, дератизация, дезинфекция. Гарантия 1 год, выезд за час, безопасно для детей и животных." data-i18n="meta.description" />

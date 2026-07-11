@@ -270,6 +270,15 @@
         if (!res.ok) throw new Error("bad status " + res.status);
         status.textContent = t("status.ok");
         status.className = "form-status ok";
+
+        // Google Ads — ariza konversiyasi (Enhanced Conversions uchun telefonni uzatamiz)
+        if (typeof gtag === "function") {
+          try { gtag("set", "user_data", { phone_number: payload.phone }); } catch (e) {}
+        }
+        if (window.trackAdsConversion) {
+          window.trackAdsConversion("lead", { value: 1.0, currency: "UZS" });
+        }
+
         form.reset();
       } catch (err) {
         status.textContent = t("status.err");
@@ -279,4 +288,16 @@
       }
     });
   });
+
+  /* ---------- Google Ads: telefon va Telegram bosishlarini kuzatish ---------- */
+  document.addEventListener("click", (e) => {
+    const link = e.target.closest("a");
+    if (!link || !window.trackAdsConversion) return;
+    const href = link.getAttribute("href") || "";
+    if (href.startsWith("tel:")) {
+      window.trackAdsConversion("phone");
+    } else if (/^https?:\/\/t\.me\//i.test(href) || href.startsWith("tg://")) {
+      window.trackAdsConversion("telegram");
+    }
+  }, { passive: true });
 })();
