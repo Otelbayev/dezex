@@ -22,6 +22,7 @@
     window.DEZEX_ADS = {
       id: 'AW-18315201408',
       conversions: {
+        pageview: 'AW-18315201408/0qalCIvFyc4cEICXr51E', // Sahifa ko'rildi (Просмотр страницы)
         lead:     'AW-18315201408/XXXXXXXXXXXXXXXXX',   // Ariza yuborildi (asosiy konversiya)
         phone:    'AW-18315201408/XXXXXXXXXXXXXXXXX',   // Telefon raqami bosildi
         telegram: 'AW-18315201408/XXXXXXXXXXXXXXXXX'    // Telegram bosildi
@@ -36,6 +37,9 @@
         gtag('event', 'conversion', Object.assign({ send_to: label }, params || {}));
       } catch (e) {}
     };
+
+    // "Просмотр страницы" konversiyasi — sahifa yuklanganda avtomatik yuboriladi.
+    window.trackAdsConversion('pageview', { value: 1.0, currency: 'USD' });
   </script>
 
   <!-- ===================== Google Analytics (gtag.js) ===================== -->
